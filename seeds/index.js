@@ -1,23 +1,14 @@
-//import all seeding files
-const seedusers = require('./user-seeds');
-const seedposts = require('./post-seeds');
-const seedcomments = require('./comment-seeds');
+const seedUsers = require('./user-seeds');
+const seedPosts = require('./post-seeds');
+const seedComments = require('./comment-seeds');
 
 const sequelize = require('../config/connection');
 
-const seedAll = async () => {
-    //the force: true will delete the data everytime the server is restarted
+const seedAll = async() => {
     await sequelize.sync({ force: true });
-    console.log('--------------');
-    await seedusers();
-    console.log('--------------');
-
-    await seedposts();
-    console.log('--------------');
-
-    await seedcomments();
-    console.log('--------------');
-
+    await seedUsers();
+    await seedPosts();
+    await seedComments();
     process.exit(0);
 };
 

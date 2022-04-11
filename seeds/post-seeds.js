@@ -1,24 +1,23 @@
-const { post } = require('../models');
+const { Post } = require('../models');
 
-const postdata = [
-    {
-        title: 'haha',
-        post_text: 'Morbi non quam nec dui luctus rutrum.',
-        user_id: '',
-    },    {
-        title: 'this is me',
-        post_text: 'Nunc purus.',
-        user_id: '',
-    },    {
-        title: 'wel...',
-        post_text: 'In hac habitasse platea dictumst.',
-        user_id: '',
-    },    {
-        title: 'work...',
-        post_text: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.',
-        user_id: '',
+const postData = [{
+        title: 'Lorem Ipsum I',
+        content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        user_id: 1
+
     },
+    {
+        title: 'Lorem Ipsum II',
+        content: 'Amet aliquam id diam maecenas ultricies mi eget mauris pharetra.',
+        user_id: 2
+    },
+    {
+        title: 'Lorem Ipsum III',
+        content: 'Ut etiam sit amet nisl purus in mollis.',
+        user_id: 3
+    }
 ];
-const seedposts = () => post.bulkCreate(postdata);
 
-module.exports = seedposts;
+const seedPosts = () => Post.bulkCreate(postData);
+
+module.exports = seedPosts;
